@@ -13,9 +13,9 @@ public class UserService
 
 
 
-    public async Task<object> GetCurrentUser()
+    public async Task<model.oauth2.UserInfo> GetCurrentUser()
     {
-        var response = await http.GetJSONAsync<System.Text.Json.Nodes.JsonNode>("oauth2/v1/userinfo");
+        var response = await http.GetJSONAsync<model.oauth2.UserInfo>("oauth2/v1/userinfo");
         
         return response;
     }

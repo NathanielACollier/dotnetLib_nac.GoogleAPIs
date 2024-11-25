@@ -11,6 +11,7 @@ public class Services_UserTests
     {
         var user = await lib.shared.google.User.GetCurrentUser();
         
-        Assert.IsTrue(user != null);
+        Assert.IsTrue(user != null &&
+                      !string.IsNullOrWhiteSpace(user.email));
     }
 }
